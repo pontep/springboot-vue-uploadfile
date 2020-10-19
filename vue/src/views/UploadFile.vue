@@ -3,8 +3,17 @@
     <h1>Upload File.</h1>
     <p>This is an uploading file page.</p>
     <div>
-      <input type="text" name="name" v-model="name" />
-      <input type="file" name="file" @change="onFileSelected" />
+      <v-row>
+        <v-col>
+          <input type="text" name="name" v-model="title" />
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col>
+          <input type="file" name="file" @change="onFileSelected" />
+        </v-col>
+      </v-row>
+
       <button @click="onUpload">Upload</button>
     </div>
     <div>{{ message }}</div>
@@ -18,7 +27,7 @@ export default {
   name: 'uploadfile',
   data() {
     return {
-      name: '',
+      title: '',
       selectedFile: null,
       response: null,
       message: null,
@@ -31,30 +40,21 @@ export default {
     onUpload() {
       const fd = new FormData();
       fd.append('file', this.selectedFile);
-      fd.append('name', this.name);
+      fd.append('title', this.title);
 
       var msg = null;
       api
-        .post('/upload3', fd)
+        .post('image/new', fd)
         .then((response) => {
           console.log(response);
           msg = response.data;
         })
         .catch(function(error) {
           if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            // console.log(error.response.data);
-            // console.log(error.response.status);
-            // console.log(error.response.headers);
             msg = error.response.data.message;
           } else if (error.request) {
-            // The request was made but no response was received
-            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-            // http.ClientRequest in node.js
             console.log(error.request);
           } else {
-            // Something happened in setting up the request that triggered an Error
             console.log('Error', error.message);
           }
           console.log(error.config);

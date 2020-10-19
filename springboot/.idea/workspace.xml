@@ -44,9 +44,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bae0887-4159-4ec1-b91e-4ea558385afc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/repository/ImageRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/TestPayload.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/uploadingfiles/controller/ImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/uploadingfiles/controller/MainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploading-files.iml" beforeDir="false" afterPath="$PROJECT_DIR$/uploading-files.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../vue/src/views/UploadFile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../vue/src/views/UploadFile.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +64,7 @@
       <list>
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -133,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603121105755</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add jpa, rest dependency">
+      <created>1603121171744</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603121171744</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,25 +165,34 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add h2" />
     <MESSAGE value="add h2 dependency" />
-    <option name="LAST_COMMIT_MESSAGE" value="add h2 dependency" />
+    <MESSAGE value="add jpa, rest dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="add jpa, rest dependency" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="214" key="GridCell.Tab.0.bottom" timestamp="1603121113585">
+    <state x="768" y="272" width="374" height="562" key="#com.intellij.ide.util.MemberChooser" timestamp="1603121659126">
       <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="1874" height="214" key="GridCell.Tab.0.bottom/0.26.1920.1054@0.26.1920.1054" timestamp="1603121113585" />
-    <state width="1874" height="214" key="GridCell.Tab.0.center" timestamp="1603121113585">
+    <state x="768" y="272" width="374" height="562" key="#com.intellij.ide.util.MemberChooser/0.26.1920.1054@0.26.1920.1054" timestamp="1603121659126" />
+    <state x="720" y="171" width="470" height="764" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603122248899">
       <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="1874" height="214" key="GridCell.Tab.0.center/0.26.1920.1054@0.26.1920.1054" timestamp="1603121113585" />
-    <state width="1874" height="214" key="GridCell.Tab.0.left" timestamp="1603121113585">
+    <state x="720" y="171" width="470" height="764" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.26.1920.1054@0.26.1920.1054" timestamp="1603122248899" />
+    <state width="1874" height="214" key="GridCell.Tab.0.bottom" timestamp="1603121887502">
       <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="1874" height="214" key="GridCell.Tab.0.left/0.26.1920.1054@0.26.1920.1054" timestamp="1603121113585" />
-    <state width="1874" height="214" key="GridCell.Tab.0.right" timestamp="1603121113585">
+    <state width="1874" height="214" key="GridCell.Tab.0.bottom/0.26.1920.1054@0.26.1920.1054" timestamp="1603121887502" />
+    <state width="1874" height="214" key="GridCell.Tab.0.center" timestamp="1603121887502">
       <screen x="0" y="26" width="1920" height="1054" />
     </state>
-    <state width="1874" height="214" key="GridCell.Tab.0.right/0.26.1920.1054@0.26.1920.1054" timestamp="1603121113585" />
+    <state width="1874" height="214" key="GridCell.Tab.0.center/0.26.1920.1054@0.26.1920.1054" timestamp="1603121887502" />
+    <state width="1874" height="214" key="GridCell.Tab.0.left" timestamp="1603121887502">
+      <screen x="0" y="26" width="1920" height="1054" />
+    </state>
+    <state width="1874" height="214" key="GridCell.Tab.0.left/0.26.1920.1054@0.26.1920.1054" timestamp="1603121887502" />
+    <state width="1874" height="214" key="GridCell.Tab.0.right" timestamp="1603121887502">
+      <screen x="0" y="26" width="1920" height="1054" />
+    </state>
+    <state width="1874" height="214" key="GridCell.Tab.0.right/0.26.1920.1054@0.26.1920.1054" timestamp="1603121887502" />
     <state x="493" y="211" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1603120839554">
       <screen x="0" y="26" width="1920" height="1054" />
     </state>
