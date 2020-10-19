@@ -3,6 +3,7 @@
     <h1>Upload File.</h1>
     <p>This is an uploading file page.</p>
     <div>
+      <input type="text" name="name" v-model="name" />
       <input type="file" name="file" @change="onFileSelected" />
       <button @click="onUpload">Upload</button>
     </div>
@@ -11,15 +12,16 @@
 </template>
 
 <script>
-import api from "../Api.js";
+import api from '../Api.js';
 
 export default {
-  name: "uploadfile",
+  name: 'uploadfile',
   data() {
     return {
+      name: '',
       selectedFile: null,
       response: null,
-      message: null
+      message: null,
     };
   },
   methods: {
@@ -28,11 +30,13 @@ export default {
     },
     onUpload() {
       const fd = new FormData();
-      fd.append("file", this.selectedFile);
+      fd.append('file', this.selectedFile);
+      fd.append('name', this.name);
+
       var msg = null;
       api
-        .post("/upload", fd)
-        .then(response => {
+        .post('/upload3', fd)
+        .then((response) => {
           console.log(response);
           msg = response.data;
         })
@@ -51,15 +55,15 @@ export default {
             console.log(error.request);
           } else {
             // Something happened in setting up the request that triggered an Error
-            console.log("Error", error.message);
+            console.log('Error', error.message);
           }
           console.log(error.config);
         })
         .finally(() => {
           this.message = msg;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

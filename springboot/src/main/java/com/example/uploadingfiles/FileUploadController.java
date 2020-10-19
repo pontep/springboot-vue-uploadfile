@@ -78,7 +78,20 @@ public class FileUploadController {
         }
         catch(Exception ex){
 
-            return ResponseEntity.badRequest().body(new MessageResponse("PONTEP THAWEESUP"));
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: " + ex.getMessage()));
+        }
+    }
+    @PostMapping("/upload3")
+    public ResponseEntity<?> handleFileUpload3(@RequestParam("file") MultipartFile file,
+                                               @RequestParam("name") String name) {
+        try{
+            storageService.store(file);
+            String result = name + " successfully uploaded " + file.getOriginalFilename() + "!";
+            return ResponseEntity.ok().body(result);
+        }
+        catch(Exception ex){
+
+            return ResponseEntity.badRequest().body(new MessageResponse("Error: " + ex.getMessage()));
         }
     }
 
